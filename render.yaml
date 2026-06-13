@@ -5,7 +5,7 @@ services:
   - type: web
     name: mirotalk
     runtime: node
-    plan: starter # free tier spins down after ~15 min idle; use starter+ for stable calls
+    plan: free # $0; spins down after ~15 min idle (~30-60s cold start). Use starter ($7/mo) for always-on
     region: singapore # closer to TW/HK; or oregon / frankfurt
     buildCommand: npm ci
     startCommand: npm start
