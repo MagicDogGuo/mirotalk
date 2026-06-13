@@ -353,7 +353,6 @@ const views = {
     client: path.join(__dirname, '../../', 'public/views/client.html'),
     landing: path.join(__dirname, '../../', 'public/views/landing.html'),
     login: path.join(__dirname, '../../', 'public/views/login.html'),
-    newCall: path.join(__dirname, '../../', 'public/views/newcall.html'),
     notFound: path.join(__dirname, '../../', 'public/views/404.html'),
     privacy: path.join(__dirname, '../../', 'public/views/privacy.html'),
     activeRooms: path.join(__dirname, '../../', 'public/views/activeRooms.html'),
@@ -368,7 +367,6 @@ const brandHtmlInjection = config.brand?.htmlInjection ?? true;
 // File to cache and inject custom HTML data like OG tags and any other elements.
 const filesPath = [
     views.landing,
-    views.newCall,
     views.client,
     views.login,
     views.activeRooms,
@@ -589,15 +587,8 @@ app.get('/', OIDCAuth, (req, res) => {
     }
 });
 
-// set new room name and join
-app.get('/newcall', OIDCAuth, (req, res) => {
-    if (!OIDC.enabled && hostCfg.protected) {
-        hostCfg.authenticated = false;
-        res.redirect('/login');
-    } else {
-        htmlInjector.injectHtml(views.newCall, res);
-    }
-});
+// legacy route → landing
+app.get('/newcall', (req, res) => res.redirect('/'));
 
 // Get Active rooms
 app.get('/activeRooms', OIDCAuth, (req, res) => {

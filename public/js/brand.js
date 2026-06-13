@@ -1,7 +1,7 @@
 'use strict';
 
 // Brand
-const brandDataKey = 'brandDataP2P';
+const brandDataKey = 'brandDataP2P-zh';
 const brandData = window.sessionStorage.getItem(brandDataKey);
 
 // Html pages
@@ -53,24 +53,24 @@ const footer = document.getElementById('footer');
 
 let brand = {
     app: {
-        language: 'en',
+        language: 'zh-Hant',
         name: 'MiroTalk',
-        title: 'MiroTalk<br />Free browser based Real-time video calls.<br />Simple, Secure, Fast.',
+        title: 'MiroTalk<br />免費的瀏覽器即時視訊通話<br />簡單、安全、快速',
         description:
-            'Start your next video call with a single click. No download, plug-in, or login is required. Just get straight to talking, messaging, and sharing your screen.',
-        joinDescription: 'Pick a room name.<br />How about this one?',
-        joinButtonLabel: 'JOIN ROOM',
-        customizeRoomButtonLabel: 'CUSTOMIZE ROOM',
-        joinLastLabel: 'Your recent room:',
+            '一鍵開始您的下一次視訊通話。無需下載、外掛或登入，直接開始通話、傳送訊息和分享螢幕。',
+        joinDescription: '取個房間名稱<br />這個怎麼樣？',
+        joinButtonLabel: '加入房間',
+        customizeRoomButtonLabel: '自訂房間',
+        joinLastLabel: '您最近使用的房間：',
     },
     site: {
         shortcutIcon: '../images/logo.svg',
         appleTouchIcon: '../images/logo.svg',
-        landingTitle: 'MiroTalk a Free Secure Video Calls, Chat & Screen Sharing.',
-        newCallTitle: 'MiroTalk a Free Secure Video Calls, Chat & Screen Sharing.',
-        newCallRoomTitle: 'Pick name. <br />Share URL. <br />Start conference.',
+        landingTitle: 'MiroTalk - 免費安全的視訊通話、聊天與螢幕分享',
+        newCallTitle: 'MiroTalk - 免費安全的視訊通話、聊天與螢幕分享',
+        newCallRoomTitle: 'MiroTalk<br />Sam Kuo版本<br />開始會議',
         newCallRoomDescription:
-            "Each room has its disposable URL. Just pick a room name and share your custom URL. It's that easy.",
+            '每個房間都有專屬連結。只要取個房間名稱並分享您的自訂 URL，就是這麼簡單。',
         loginTitle: 'MiroTalk - Host Protected login required.',
         loginHeading: 'Welcome back',
         loginDescription: 'Enter your credentials to continue.',

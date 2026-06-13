@@ -789,7 +789,7 @@ let surveyURL = 'https://www.questionpro.com/t/AUs7VZq00L';
 
 // Redirect on leave room
 let redirectActive = false;
-let redirectURL = '/newcall';
+let redirectURL = '/';
 
 let needToCreateOfferByPeer = {};
 
@@ -13732,7 +13732,7 @@ function handleRoomLocked() {
         showClass: { popup: 'animate__animated animate__fadeInDown' },
         hideClass: { popup: 'animate__animated animate__fadeOutUp' },
     }).then((result) => {
-        if (result.isConfirmed) openURL('/newcall');
+        if (result.isConfirmed) openURL('/');
     });
 }
 
@@ -15947,7 +15947,7 @@ function handleKickedOut(config) {
         hideClass: { popup: 'animate__animated animate__fadeOutUp' },
     }).then(() => {
         checkRecording();
-        openURL('/newcall');
+        openURL('/');
     });
 }
 
@@ -15979,7 +15979,7 @@ function showAbout() {
  * Init Exit Meeting
  */
 function initExitMeeting() {
-    openURL('/newcall');
+    openURL('/');
 }
 
 /**
@@ -16030,7 +16030,7 @@ function leaveFeedback() {
 }
 
 function redirectOnLeave() {
-    redirectActive ? openURL(redirectURL) : openURL('/newcall');
+    redirectActive ? openURL(redirectURL) : openURL('/');
 }
 
 /**

@@ -260,11 +260,11 @@ function joinRoom() {
     const roomValid = isValidRoomName(roomName);
 
     if (!roomName) {
-        popup('warning', 'Room name empty!\nPlease pick a room name.');
+        popup('warning', '房間名稱為空！\n請選擇一個房間名稱。');
         return;
     }
     if (!roomValid) {
-        popup('warning', 'Invalid Room name!\nPath traversal pattern detected!');
+        popup('warning', '無效的房間名稱！\n偵測到路徑遍歷模式！');
         return;
     }
 

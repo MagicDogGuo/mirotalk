@@ -166,7 +166,7 @@ module.exports = {
     // ==========================================
     redirect: {
         enabled: getEnvBoolean(process.env.REDIRECT_ENABLED),
-        url: process.env.REDIRECT_URL || '/newcall',
+        url: process.env.REDIRECT_URL || '/',
     },
 
     // ==========================================
@@ -293,33 +293,33 @@ module.exports = {
     brand: {
         htmlInjection: true,
         app: {
-            language: 'en', // https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes
+            language: 'zh-Hant', // https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes
             name: 'MiroTalk',
-            title: '<h1>MiroTalk</h1>Free browser based Real-time video calls.<br />Simple, Secure, Fast.',
+            title: 'MiroTalk<br />免費的瀏覽器即時視訊通話<br />簡單、安全、快速',
             description:
-                'Start your next video call with a single click. No download, plug-in, or login is required. Just get straight to talking, messaging, and sharing your screen.',
-            joinDescription: 'Pick a room name.<br />How about this one?',
-            joinButtonLabel: 'JOIN ROOM',
-            customizeRoomButtonLabel: 'CUSTOMIZE ROOM',
-            joinLastLabel: 'Your recent room:',
+                '一鍵開始您的下一次視訊通話。無需下載、外掛或登入，直接開始通話、傳送訊息和分享螢幕。',
+            joinDescription: '取個房間名稱<br />這個怎麼樣？',
+            joinButtonLabel: '加入房間',
+            customizeRoomButtonLabel: '自訂房間',
+            joinLastLabel: '您最近使用的房間：',
         },
         og: {
             type: 'app-webrtc',
             siteName: 'MiroTalk',
-            title: 'Click the link to make a call.',
+            title: '點擊連結開始通話。',
             description:
-                'MiroTalk calling provides real-time HD quality and latency simply not available with traditional technology.',
+                'MiroTalk 通話提供傳統技術無法比擬的即時 HD 畫質與低延遲體驗。',
             image: 'https://p2p.mirotalk.com/images/preview.png',
             url: 'https://p2p.mirotalk.com',
         },
         site: {
             shortcutIcon: '../images/logo.svg',
             appleTouchIcon: '../images/logo.svg',
-            landingTitle: 'MiroTalk a Free Secure Video Calls, Chat & Screen Sharing.',
-            newCallTitle: 'MiroTalk a Free Secure Video Calls, Chat & Screen Sharing.',
-            newCallRoomTitle: 'Pick name. <br />Share URL. <br />Start conference.',
+            landingTitle: 'MiroTalk - 免費安全的視訊通話、聊天與螢幕分享',
+            newCallTitle: 'MiroTalk - 免費安全的視訊通話、聊天與螢幕分享',
+            newCallRoomTitle: '取個名稱<br />分享連結<br />開始會議',
             newCallRoomDescription:
-                "Each room has its disposable URL. Just pick a room name and share your custom URL. It's that easy.",
+                '每個房間都有專屬連結。只要取個房間名稱並分享您的自訂 URL，就是這麼簡單。',
             loginTitle: 'MiroTalk - Host Protected login required.',
             loginHeading: 'Welcome back',
             loginDescription: 'Enter your credentials to continue.',
