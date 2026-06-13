@@ -593,6 +593,8 @@ let thisMaxRoomParticipants = 8;
 
 // misc
 let swBg = 'rgba(0, 0, 0, 0.7)'; // swAlert background color
+const pageBg =
+    "linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/images/sampan.jpeg') center/cover no-repeat fixed";
 let isDocumentOnFullScreen = false;
 let isToggleExtraBtnClicked = false;
 let hasTemporaryAvatar = !!(lsSettings.peer_avatar && isValidAvatarURL(lsSettings.peer_avatar));
@@ -1933,7 +1935,7 @@ async function getUserName() {
 async function whoAreYou() {
     console.log('11. Who are you?');
 
-    document.body.style.background = 'var(--body-bg)';
+    applyPageBackground();
 
     if (myPeerName) {
         elemDisplay(loadingDiv, false);
@@ -2016,6 +2018,7 @@ async function whoAreYou() {
     Swal.fire({
         allowOutsideClick: false,
         allowEscapeKey: false,
+        backdrop: false,
         background: swBg,
         title: brand.app?.name || 'MiroTalk P2P',
         position: 'center',
@@ -3535,6 +3538,12 @@ let themeMap = {
     },
 };
 
+function applyPageBackground() {
+    const pageBackground = getId('pageBackground');
+    if (pageBackground) pageBackground.style.background = pageBg;
+    document.body.style.background = 'transparent';
+}
+
 /**
  * Apply a set of CSS custom properties from a theme vars object
  * @param {object} vars theme CSS properties map
@@ -3544,7 +3553,7 @@ function applyThemeVars(vars) {
     for (const [prop, value] of Object.entries(vars)) {
         setSP(prop, value);
     }
-    document.body.style.background = vars['--body-bg'];
+    applyPageBackground();
 }
 
 /**
