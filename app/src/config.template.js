@@ -49,7 +49,7 @@ module.exports = {
     // ==========================================
     server: {
         port: port,
-        host: process.env.HOST || `http://localhost:${port}`,
+        host: process.env.HOST || process.env.RENDER_EXTERNAL_URL || `http://localhost:${port}`,
         environment: process.env.NODE_ENV || 'development',
         trustProxy: !!getEnvBoolean(process.env.TRUST_PROXY),
 

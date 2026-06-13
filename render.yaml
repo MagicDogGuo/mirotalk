@@ -1,0 +1,43 @@
+# MiroTalk P2P on Render — https://render.com/docs/blueprint-spec
+# Deploy: Dashboard → Blueprints → New Blueprint Instance → connect this repo
+
+services:
+  - type: web
+    name: mirotalk
+    runtime: node
+    plan: starter # free tier spins down after ~15 min idle; use starter+ for stable calls
+    region: singapore # closer to TW/HK; or oregon / frankfurt
+    buildCommand: npm ci
+    startCommand: npm start
+    healthCheckPath: /stats
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: TRUST_PROXY
+        value: true
+      # HOST auto-fills from RENDER_EXTERNAL_URL in config.template.js when unset
+      - key: API_KEY_SECRET
+        generateValue: true
+      - key: JWT_KEY
+        generateValue: true
+      - key: SESSION_SECRET
+        generateValue: true
+      - key: STUN_SERVER_ENABLED
+        value: true
+      - key: STUN_SERVER_URL
+        value: stun:stun.l.google.com:19302
+      - key: TURN_SERVER_ENABLED
+        value: true
+      # Register your own TURN at https://www.metered.ca/tools/openrelay/ (or self-host coturn)
+      - key: TURN_SERVER_URL
+        sync: false
+      - key: TURN_SERVER_USERNAME
+        sync: false
+      - key: TURN_SERVER_CREDENTIAL
+        sync: false
+      - key: STATS_ENABLED
+        value: false
+      - key: HOST_PROTECTED
+        value: false
+      - key: LOGS_DEBUG
+        value: false
