@@ -54,7 +54,7 @@ const footer = document.getElementById('footer');
 let brand = {
     app: {
         language: 'zh-Hant',
-        name: 'MiroTalk',
+        name: 'SamKuo Mirotalk',
         title: 'MiroTalk<br />免費的瀏覽器即時視訊通話<br />簡單、安全、快速',
         description:
             '一鍵開始您的下一次視訊通話。無需下載、外掛或登入，直接開始通話、傳送訊息和分享螢幕。',
@@ -66,8 +66,8 @@ let brand = {
     site: {
         shortcutIcon: '../images/logo.svg',
         appleTouchIcon: '../images/logo.svg',
-        landingTitle: 'MiroTalk - 免費安全的視訊通話、聊天與螢幕分享',
-        newCallTitle: 'MiroTalk - 免費安全的視訊通話、聊天與螢幕分享',
+        landingTitle: 'SamKuo Mirotalk',
+        newCallTitle: 'SamKuo Mirotalk',
         newCallRoomTitle: 'MiroTalk<br />Sam Kuo版本<br />開始會議',
         newCallRoomDescription:
             '每個房間都有專屬連結。只要取個房間名稱並分享您的自訂 URL，就是這麼簡單。',
